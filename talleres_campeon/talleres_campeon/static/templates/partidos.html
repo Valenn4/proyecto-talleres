@@ -10,25 +10,82 @@
 </head>
 <body>
     {% include 'header.html' %}
-    <h1 class="title">Próximos partidos</h1>
-    <div class="mobile">
-        {% for match in listMatches %}
-            <div class="match">
-                <div class="info">
-                    <p class="tournament">{{match.tournament}} - {{match.instance}}</p>
-                    <p class="date">{{match.date|date:"d/m"}}</p>
-                </div>
-                <div class="teams">
-                    <div class="team_1">
-                        <img src="{{match.one_team}}" alt="">
+    
+    <div class="tournament">
+        <div class="texts">
+            <h1 class="title">Próximos partidos</h1>
+            <p class="more">(Desliza para ver más)</p>
+        </div>
+        <div class="mobile">
+            {% for match in listMatches %}
+                <div class="match">
+                    <div class="info">
+                        <p class="tournament">{{match.tournament}} - {{match.instance}}</p>
+                        <p class="date">{{match.date|date:"d/m"}}</p>
                     </div>
-                    <p class="time">{{match.time|time:"G:i"}}hs</p>
-                    <div class="team_2">
-                        <img src="{{match.two_team}}" alt="">
+                    <div class="teams">
+                        <div class="team_1">
+                            <img src="{{match.one_team}}" alt="">
+                        </div>
+                        <p class="time">{{match.time|time:"G:i"}}hs</p>
+                        <div class="team_2">
+                            <img src="{{match.two_team}}" alt="">
+                        </div>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+    
+    <div class="tournament">
+        <div class="texts">
+            <h1 class="title">Liga Profesional</h1>
+            <p class="more">(Desliza para ver más)</p>
+        </div>
+        <div class="mobile">
+            {% for match in matchesLiga %}
+                <div class="match">
+                    <div class="info">
+                        <p class="tournament">{{match.tournament}} - {{match.instance}}</p>
+                        <p class="date">{{match.date|date:"d/m"}}</p>
+                    </div>
+                    <div class="teams">
+                        <div class="team_1">
+                            <img src="{{match.one_team}}" alt="">
+                        </div>
+                        <p class="time">{{match.time|time:"G:i"}}hs</p>
+                        <div class="team_2">
+                            <img src="{{match.two_team}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="tournament">
+        <div class="texts">
+            <h1 class="title">Copa Argentina</h1>
+            <p class="more">(Desliza para ver más)</p>
+        </div>
+        <div class="mobile">
+            {% for match in matchesCopaArgentina %}
+                <div class="match">
+                    <div class="info">
+                        <p class="tournament">{{match.tournament}} - {{match.instance}}</p>
+                        <p class="date">{{match.date|date:"d/m"}}</p>
+                    </div>
+                    <div class="teams">
+                        <div class="team_1">
+                            <img src="{{match.one_team}}" alt="">
+                        </div>
+                        <p class="time">{{match.time|time:"G:i"}}hs</p>
+                        <div class="team_2">
+                            <img src="{{match.two_team}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </body>
 </html>

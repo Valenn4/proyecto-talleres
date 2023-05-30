@@ -49,6 +49,8 @@ def newsCategory(request, category):
 
 def matches(request):
     context = {
-        'listMatches': Match.objects.all().order_by("-id")
+        'listMatches': Match.objects.all().order_by("-id"),
+        'matchesLiga': Match.objects.filter(tournament="Liga Profesional").order_by("-id"),
+        'matchesCopaArgentina': Match.objects.filter(tournament="Copa Argentina"),
     }
     return render(request, 'partidos.html', context)

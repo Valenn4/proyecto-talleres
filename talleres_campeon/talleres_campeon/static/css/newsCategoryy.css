@@ -105,11 +105,10 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
   }
-  @media screen and (min-width:720px){
-    .new img {
-      height: 310px;
-    }
+  .new img {
+    height: 280px;
   }
+  
 }
 @media screen and (min-width:70em){
   .category_structure{

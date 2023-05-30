@@ -1,6 +1,16 @@
-.title{
+.tournament{
+    display: flex;
+    flex-direction: column;
     width: 70%;
-    margin: 20px auto;
+    margin: auto;
+}
+.texts{
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 20px auto 0px auto;
+}
+.title{
     margin-bottom: 0px;
     color: rgb(5, 5, 34);
     font-family: 'Poppins';
@@ -9,16 +19,23 @@
     text-transform: uppercase;
     font-weight: bold;
 }
+.texts .more {
+    display: none;
+    margin: auto 10px;
+    font-family: 'Roboto';
+}
 .mobile {
     display: flex;
+    margin: auto;
     flex-direction: column;
     width: 100%;
 }
+
 .match {
     display: flex;
     flex-direction: column;
-    width: 70%;
-    margin: 20px auto;
+    width: 100%;
+    margin: 10px auto;
     background-color: rgb(126, 124, 124);
     background-color: rgb(5, 5, 34);
     font-family: 'Roboto';
@@ -59,4 +76,32 @@
 }
 .teams p {
     font-size: 17px;
+}
+
+
+@media screen and (min-width: 60em){
+    .tournament{
+        width: 100%;
+    }
+    .texts{
+        display: flex;
+        width: 70%;
+        margin: 30px 85px 0px 85px;
+    }
+    .texts .more {
+        display: block;
+    }
+    .mobile {
+        display: flex;
+        flex-direction: row;
+        overflow: auto;
+        width: 70%;
+    }
+    .mobile::-webkit-scrollbar {
+        display: none;
+    }
+    .match {
+        width: auto;
+        margin: 20px 25px 20px 0px;
+    }
 }
