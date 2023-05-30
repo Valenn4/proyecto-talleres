@@ -27,10 +27,12 @@ class Match(models.Model):
     stadium = models.CharField(max_length=50, blank=False)
     one_team = models.TextField(max_length=200, blank=False)
     name_one_team = models.CharField(max_length=50, blank=False)
+    result_one_team = models.CharField(max_length=10, default="", blank=True)
     two_team = models.TextField(max_length=200, blank=False)
-    name_two_team = models.CharField(max_length=50, blank=False)
-    date = models.DateField(blank=False)
-    time = models.TimeField(blank=False)
+    name_two_team = models.CharField(max_length=50, blank=False)    
+    result_two_team = models.CharField(max_length=10, default="", blank=True)
+    date = models.DateField(blank=True, null= True, auto_now=False)
+    time = models.TimeField(blank=True, null= True, auto_now=False)
     
     def __str__(self):
         return self.name_one_team+" - " +self.name_two_team
