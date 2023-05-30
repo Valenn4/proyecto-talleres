@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/matchess.css' %}">
+</head>
+<body>
+    {% include 'header.html' %}
+    <h1 class="title">Próximos partidos</h1>
+    <div class="mobile">
+        {% for match in listMatches %}
+            <div class="match">
+                <div class="info">
+                    <p class="tournament">{{match.tournament}} - {{match.instance}}</p>
+                    <p class="date">{{match.date|date:"d/m"}}</p>
+                </div>
+                <div class="teams">
+                    <div class="team_1">
+                        <img src="{{match.one_team}}" alt="">
+                    </div>
+                    <p class="time">{{match.time|time:"G:i"}}hs</p>
+                    <div class="team_2">
+                        <img src="{{match.two_team}}" alt="">
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

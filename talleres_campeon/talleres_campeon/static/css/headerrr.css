@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+    color: white;
+    font-size: 30px;
+  }
+
+  .header_mobile a, .header_web a{
+    text-decoration: none;
+    color: white;
+  }
+  
+  .header_web{display: none;}
+  .header_mobile {
+    display: flex;
+    width: auto;
+    height: 80px;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(5, 5, 34);
+    border-bottom: 2px solid orangered
+  }
+  .logo{
+    margin: auto;
+  }
+  .header_mobile img {
+    width: 75px;
+    height: 65px;
+    margin:auto;
+  }
+  .header_mobile .options{
+    display: none;
+    flex-direction:column;
+    overflow: scroll;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height:100%;
+    background-color: rgb(5, 5, 34);
+}
+  .header_mobile .options::-webkit-scrollbar{
+    display: none;
+  }
+  .header_mobile .list{
+    margin: 47px 0;
+  }
+  .open{
+    position: absolute;
+    left: 20px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .header_mobile .list li {
+    list-style: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .header_mobile .list .item_list {
+    font-size: 18px;
+    margin: 80px 60px;
+    text-transform: uppercase;
+  }
+  .header_mobile .list .item_new {
+    margin: 50px 60px;
+  }
+  .header_mobile .list li:hover {
+    color: orangered;
+  }
+  .options li {
+    text-transform: none;
+  }
+  @media screen and (min-width:500px){
+    .material-symbols-outlined {
+      font-size: 35px;
+    }
+    .header_mobile .list li {
+      font-size: 20px;
+    }
+  }
+  @media screen and (min-width:60em){
+  
+    .header_mobile{display: none;}
+    .header_web {
+      display: flex;
+      margin: auto;
+      width: auto;
+      height: 80px;
+      align-items: center;
+      padding: 20px;
+      background-color: rgb(5, 5, 34);
+      border-bottom: 2px solid orangered
+    }
+  
+    .header_web img {
+      width: 80px;
+      height: 70px;
+      margin-left: 80px;
+    }
+    .header_web .options{
+      display: flex;
+      width: 100%;
+      margin: auto;
+      margin-right: 20px;
+    }
+    .header_web .list {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      margin-right: 10px;
+    }
+  
+    .header_web .list .item_list {
+      list-style: none;
+      margin: auto 35px;
+      color: white;
+      text-transform: uppercase;
+      font-family: 'Poppins';
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 17px;
+      text-decoration: none;
+    }
+    .item_list:hover{
+      color: orangered;
+    }
+    .item_list span {
+      font-size: 20px;
+    }
+  }
+  
