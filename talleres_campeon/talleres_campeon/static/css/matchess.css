@@ -128,17 +128,27 @@
     }
     .match {
         width: auto;
-        margin: 0;
         margin-right: 30px;
         margin-top: 15px;
-        padding: 0;
 
     }
     .info{
         width: 100%;
     }
+    .date {
+        width: 20%;
+    }
+    .instance {
+        width: 80%;
+    }
     .teams {
-        width: auto;
-        padding: 10px;
+        width: 100%;
+        margin-top: 0;
+        margin: 0;
+    }
+    .time {
+        width: 100%;
+        text-align: center;
+        background-color: red;
     }
 }
