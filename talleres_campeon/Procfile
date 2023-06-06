@@ -1,0 +1,1 @@
+web: gunicorn talleres_campeon.wsgi --log-file -

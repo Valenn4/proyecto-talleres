@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+
+  .header_mobile{
+    width: auto;
+  }
+
+  .header {
+    display: flex;
+    width: 94%;
+    padding: 3%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    z-index: 1;
+    justify-content: center;
+    background-color: rgb(5, 5, 34);
+    margin: 0;
+  }
+  .header img {
+    width: 22px;
+    height: 22px;
+    font-size: 10px;
+  }
+  .header li {
+    list-style: none;
+    margin: 0 37px;
+  }
+
+  .header_mobile a, .header_web a{
+    text-decoration: none;
+    color: white;
+  }
+  
+  .header_mobile .logo img {
+    width: 75px;
+    height: 65px;
+    margin:auto;
+  }
+  .header_web{display: none;}
+  .header_mobile {
+    display: flex;
+    width: auto;
+    height: 80px;
+    padding: 20px;
+    background-color: rgb(5, 5, 34);
+    border-bottom: 2px solid orangered;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @media screen and (min-width:500px){
+    .material-symbols-outlined {
+      font-size: 35px;
+    }
+    .header_mobile .list li {
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (min-width:600px){
+    .header li {
+      margin: 0 57px;
+    }
+  }
+  @media screen and (min-width:52em){
+    .header_mobile{display: none;}
+    .header_web {
+      display: flex;
+      margin: auto;
+      width: auto;
+      height: 80px;
+      align-items: center;
+      padding: 20px;
+      background-color: rgb(5, 5, 34);
+      border-bottom: 2px solid orangered
+    }
+  
+    .header_web img {
+      width: 80px;
+      height: 70px;
+      margin-left: 80px;
+    }
+    .header_web .options{
+      display: flex;
+      width: 100%;
+      margin: auto;
+      margin-right: 20px;
+    }
+    .header_web .list {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      margin-right: 10px;
+    }
+  
+    .header_web .list .item_list {
+      list-style: none;
+      margin: auto 35px;
+      color: white;
+      text-transform: uppercase;
+      font-family: 'Poppins';
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
+    }
+    .item_list:hover{
+      color: orangered;
+    }
+    .item_list span {
+      font-size: 20px;
+    }
+  }
+  
+  @media screen and (min-width:60em){
+    .header_web .list .item_list {
+      font-size: 17px;
+    }
+  }

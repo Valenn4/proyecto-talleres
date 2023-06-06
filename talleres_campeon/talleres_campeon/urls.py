@@ -27,7 +27,7 @@ urlpatterns = [
     path('noticias/<str:category>', newsCategory),
     path('partidos/', matches),
     path('posiciones/', positions)
-]
+] + static(settings.STATIC_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += [
     path('accounts/', include('django.contrib.auth.urls')),
