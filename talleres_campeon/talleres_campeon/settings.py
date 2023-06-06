@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-*7&$2w^p2(w4$ts%6d9+fo!pak_w*2x9x=xm3l9*5es1=fx1a)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1',]
 
 
 # Application definition
@@ -85,8 +85,12 @@ WSGI_APPLICATION = 'talleres_campeon.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'talleres-campeon',
+        'USER': 'postgres',
+        'PASSWORD': '2003Talleres!pg',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

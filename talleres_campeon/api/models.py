@@ -42,3 +42,18 @@ class Video(models.Model):
 
     def __str__(self):
         return self.url
+    
+class PositionLigaProfesional(models.Model):
+    image_team = models.CharField(max_length=200, blank=False)
+    team = models.CharField(max_length=50, blank=False)
+    jugados = models.IntegerField(blank=False)
+    ganados = models.IntegerField(blank=False)
+    empatados = models.IntegerField(blank=False)
+    perdidos = models.IntegerField(blank=False)
+    goles_favor = models.IntegerField(blank=False)
+    goles_encontra = models.IntegerField(blank=False)
+    diferencia = models.IntegerField(blank=False)
+    puntos = models.IntegerField(blank=False)
+
+    def __str__(self):
+        return self.team

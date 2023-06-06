@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/homee.css' %}">
+    <link rel="stylesheet" href="{% static 'css/homeee.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body appPages>
@@ -52,17 +52,25 @@
 
       <div class="matches">
         {% for match in listMatchs %}
+        {% if match.result_one_team == "" %}
         <div class="match">
           <p class="tournament">{{match.tournament}}</p>
           <div class="structure_match">
             <img src="{{match.one_team}}" alt="">
+            {% if match.date|date:"d/m/Y" == '14/11/2099' %}
+            <div class="info">
+              <p>AC</p>
+            </div>            
+            {% else %}
             <div class="info">
               <p>{{match.date|date:"d/m" }}</p>
               <p>{{match.time|time:"G:i"}}</p>
             </div>
+            {% endif %}
             <img src="{{match.two_team}}" alt="">
           </div>
         </div>
+        {% endif %}
         {% endfor %}
       </div>
       <!-- MORE NEWS -->

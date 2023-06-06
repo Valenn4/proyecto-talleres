@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from api.models import New, Match, Category, Video
+from api.models import New, Match, Category, Video, PositionLigaProfesional
 
 
 
@@ -18,7 +18,7 @@ def home(request):
     context = {
         'listNews': New.objects.all().order_by("-id"),
         'listNewsFourAndSix': New.objects.all().order_by("-id")[3:6],
-        'listMatchs': Match.objects.all().order_by("-id"),
+        'listMatchs': Match.objects.all().order_by("date"),
         'listCategories': Category.objects.all(),
         'listVideos': Video.objects.all().order_by("-id")[0:3],
         'listNewsLigaProfesional': listNewsLigaProfesional[0:3],
@@ -56,4 +56,10 @@ def matches(request):
         'matchesCopaArgentinaNext': Match.objects.filter(tournament="Copa Argentina", result_one_team="").order_by("date"),
         'matchesCopaArgentinaBack': Match.objects.filter(tournament="Copa Argentina").exclude(result_one_team="").order_by("-date"),
     }
-    return render(request, 'partidos.html', context)
+    return render(request, 'matches.html', context)
+
+def positions(request):
+    context = {
+        'positionLigaProfesional':PositionLigaProfesional.objects.all().order_by("-puntos")
+    }
+    return render(request, 'positions.html', context)

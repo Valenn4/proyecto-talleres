@@ -16,16 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from talleres_campeon.views import home, newDetail, newsCategory, matches
+from talleres_campeon.views import home, newDetail, newsCategory, matches, positions
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', home),
+    path('', home),
     path('noticia/<int:id>', newDetail),
     path('noticias/<str:category>', newsCategory),
     path('partidos/', matches),
+    path('posiciones/', positions)
 ]
 
 urlpatterns += [
