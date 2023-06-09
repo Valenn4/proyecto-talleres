@@ -1,0 +1,243 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/matchess.css' %}">
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <div class="filter">
+        <select class="tournaments">
+            <option><p>Todas las competiciones</p></option>
+            <option><p>Liga Profesional Argentina</p></option>
+            <option><p>Copa Argentina</p></option>
+        </select>
+    </div>
+
+    <div class="tournament next_matches">
+        <div class="texts">
+            <p class="title">Próximos partidos</p>
+            <p class="complete_list">ver lista completa</p>
+        </div>
+        <div class="mobile">
+            {% if listMatchesNext.count < 1 %}
+                <p class="no_matches">No hay partidos...</p>
+            {% else %}
+                {% for match in listMatchesNext %}
+                    {% if match.result_one_team == "" %}
+                        <div class="match">
+                            <div class="info">
+                                <p class="instance">{{match.tournament}} - {{match.instance}}</p>
+                                {% if match.date|date:"d/m/Y" == '14/11/2099' %}
+                                <p class="date">AC</p>
+                                {% else %}
+                                <p class="date">{{match.date|date:"d/m"}}</p>
+                                {% endif %}
+                            </div>
+                            <div class="teams">
+                                <div class="team_1">
+                                    <img src="{{match.one_team}}" alt="">
+                                    <p>{{match.name_one_team}}</p>
+                                </div>
+                                {% if match.time|time:"G:i" == "0:00" %}
+                                <p class="time">AC</p>
+                                {% else %}
+                                <p class="time">{{match.time|time:"G:i"}}hs</p>
+                                {% endif %}
+                                <div class="team_2">
+                                    <p>{{match.name_two_team}}</p>
+                                    <img src="{{match.two_team}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="texts">
+            <p class="title">Ya jugados</p>
+            <p class="complete_list">ver lista completa</p>
+        </div>
+        <div class="mobile">
+            {% if listMatchesBack.count < 1 %}
+                <p class="no_matches">No hay partidos...</p>
+            {% else %}
+                {% for match in listMatchesBack %}
+                    {% if match.result_one_team != "" %}
+                    <div class="match">
+                        <div class="info">
+                            <p class="instance">{{match.tournament}} - {{match.instance}}</p>
+                            <p class="date">{{match.date|date:"d/m"}}</p>
+                        </div>
+                        <div class="teams">
+                            <div class="team_1">
+                                <img src="{{match.one_team}}" alt="">
+                                <p>{{match.name_one_team}}</p>
+                            </div>
+                            <p class="time result">{{match.result_one_team}} - {{match.result_two_team}}</p>
+                            <div class="team_2">
+                                <p>{{match.name_two_team}}</p>
+                                <img src="{{match.two_team}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="tournament liga_profesional">
+        <div class="texts">
+            <p class="title">Liga Profesional</p>
+            <p class="complete_list">ver lista completa</p>
+        </div>
+        <div class="mobile">
+            {% if matchesLigaNext.count < 1 %}
+                <p class="no_matches">No hay partidos...</p>
+            {% else %}
+                {% for match in matchesLigaNext %}
+                    {% if match.result_one_team == "" %}
+                        <div class="match">
+                            <div class="info">
+                                <p class="instance">{{match.tournament}} - {{match.instance}}</p>
+                                {% if match.date|date:"d/m/Y" == '14/11/2099' %}
+                                <p class="date">AC</p>
+                                {% else %}
+                                <p class="date">{{match.date|date:"d/m"}}</p>
+                                {% endif %}
+                            </div>
+                            <div class="teams">
+                                <div class="team_1">
+                                    <img src="{{match.one_team}}" alt="">
+                                    <p>{{match.name_one_team}}</p>
+                                </div>
+                                {% if match.time|time:"G:i" == "0:00" %}
+                                <p class="time">AC</p>
+                                {% else %}
+                                <p class="time">{{match.time|time:"G:i"}}hs</p>
+                                {% endif %}
+                                <div class="team_2">
+                                    <p>{{match.name_two_team}}</p>
+                                    <img src="{{match.two_team}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="texts">
+            <p class="title">Ya jugados</p>
+            <p class="complete_list">ver lista completa</p>
+        </div>
+        <div class="mobile">
+            {% if matchesLigaBack.count < 1 %}
+                <p class="no_matches">No hay partidos...</p>
+            {% else %}
+                {% for match in matchesLigaBack %}
+                    {% if match.result_one_team != "" %}
+                    <div class="match">
+                        <div class="info">
+                            <p class="instance">{{match.tournament}} - {{match.instance}}</p>
+                            <p class="date">{{match.date|date:"d/m"}}</p>
+                        </div>
+                        <div class="teams">
+                            <div class="team_1">
+                                <img src="{{match.one_team}}" alt="">
+                                <p>{{match.name_one_team}}</p>
+                            </div>
+                            <p class="time result">{{match.result_one_team}} - {{match.result_two_team}}</p>
+                            <div class="team_2">
+                                <p>{{match.name_two_team}}</p>
+                                <img src="{{match.two_team}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="tournament copa_argentina">
+        <div class="texts">
+            <p class="title">Copa Argentina</p>
+            <p class="complete_list">ver lista completa</p>
+        </div>
+        <div class="mobile">
+            {% if matchesCopaArgentinaNext.count < 1 %}
+                <p class="no_matches">No hay partidos...</p>
+            {% else %}
+                {% for match in matchesCopaArgentinaNext %}
+                    {% if match.result_one_team == "" %}
+                        <div class="match">
+                            <div class="info">
+                                <p class="instance">{{match.tournament}} - {{match.instance}}</p>
+                                {% if match.date|date:"d/m/Y" == '14/11/2099' %}
+                                <p class="date">AC</p>
+                                {% else %}
+                                <p class="date">{{match.date|date:"d/m"}}</p>
+                                {% endif %}
+                            </div>
+                            <div class="teams">
+                                <div class="team_1">
+                                    <img src="{{match.one_team}}" alt="">
+                                    <p>{{match.name_one_team}}</p>
+                                </div>
+                                {% if match.time|time:"G:i" == "0:00" %}
+                                <p class="time">AC</p>
+                                {% else %}
+                                <p class="time">{{match.time|time:"G:i"}}hs</p>
+                                {% endif %}
+                                <div class="team_2">
+                                    <p>{{match.name_two_team}}</p>
+                                    <img src="{{match.two_team}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="texts">
+            <p class="title">Ya jugados</p>
+            <p class="complete_list">ver lista completa</p>
+        </div>
+        <div class="mobile">
+            {% if matchesCopaArgentinaBack.count < 1 %}
+                <p class="no_matches">No hay partidos...</p>
+            {% else %}
+                {% for match in matchesCopaArgentinaBack %}
+                    {% if match.result_one_team != "" %}
+                    <div class="match">
+                        <div class="info">
+                            <p class="instance">{{match.tournament}} - {{match.instance}}</p>
+                            <p class="date">{{match.date|date:"d/m"}}</p>
+                        </div>
+                        <div class="teams">
+                            <div class="team_1">
+                                <img src="{{match.one_team}}" alt="">
+                                <p>{{match.name_one_team}}</p>
+                            </div>
+                            <p class="time result">{{match.result_one_team}} - {{match.result_two_team}}</p>
+                            <div class="team_2">
+                                <p>{{match.name_two_team}}</p>
+                                <img src="{{match.two_team}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
+<script src="{% static 'js/matches.js' %}"></script>

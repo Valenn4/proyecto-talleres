@@ -1,0 +1,31 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/headerr.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+  
+<header class="header_mobile">
+    <a href="/" class="logo"><img src='{% static "images/logo.png" %}' ></a>
+  
+    <div class="header">
+      <li class="item_list"><a href="/"><img src="{% static 'images/home (1).png' %}"></a></li>
+      <li class="item_list"><a href="/partidos"><img src="{% static 'images/matches.png' %}"></a></li>
+      <li class="item_list"><a href="/posiciones"><img src="{% static 'images/profit.png' %}"></a></li>
+      <li class="item_list"><a href="/quiz"><img src="{% static 'images/gamepad.png' %}"></a></li>
+    </div>
+</header>
+  
+<header class="header_web">
+    <a href="/"><img src='{% static "images/logo.png" %}' ></a>
+    <div class="options">
+      <ul class="list">
+        <li class="item_list"><a href="/">Inicio</a></li>
+        <li class="item_list"><a href="/partidos">Partidos</a></li>
+        <li class="item_list"><a href="/posiciones">Posiciones</a></li>
+        <li class="item_list"><a href="/quiz">Quiz</a></li>
+      </ul>
+    </div>
+</header>
+  
+<script src="{% static 'js/headerr.js' %}"></script>
