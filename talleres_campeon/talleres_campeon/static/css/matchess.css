@@ -6,10 +6,11 @@
 .filter select {
     display: flex;
     width: 75%;
-    padding: 10px;
+    padding: 15px;
     margin: auto;
+    border: none;
+    background-color: rgb(204, 204, 204);
 }
-
 .tournament{
     display: flex;
     flex-direction: column;
@@ -36,13 +37,20 @@
     text-transform: uppercase;
     font-weight: bold;
 }
+.complete_list {
+    display: flex;
+    margin-left: 10px;
+    cursor: pointer;
+    align-items: center;
+    font-family: 'Poppins';
+    font-size: 14px;
+    color: rgb(5, 5, 34);
+}
 .mobile {
     display: flex;
     flex-direction: column;
     margin: auto;
     width: 90%;
-    max-height: 420px;
-    overflow: auto;
 }
 
 .match {
@@ -132,7 +140,7 @@
     .filter {
         width: 90%;
         margin: 20px auto 5px auto;
-        padding-top: 40px;
+        padding-top: 10px;
     }
     .filter select {
         width: 40%;

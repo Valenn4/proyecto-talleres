@@ -49,12 +49,12 @@ def newsCategory(request, category):
 
 def matches(request):
     context = {
-        'listMatchesNext': Match.objects.filter(result_one_team="").order_by("date"),
-        'listMatchesBack': Match.objects.exclude(result_one_team="").order_by("-date"),
-        'matchesLigaNext': Match.objects.filter(tournament="Liga Profesional", result_one_team="").order_by("date"),
-        'matchesLigaBack': Match.objects.filter(tournament="Liga Profesional").exclude(result_one_team="").order_by("-date"),
-        'matchesCopaArgentinaNext': Match.objects.filter(tournament="Copa Argentina", result_one_team="").order_by("date"),
-        'matchesCopaArgentinaBack': Match.objects.filter(tournament="Copa Argentina").exclude(result_one_team="").order_by("-date"),
+        'listMatchesNext': Match.objects.filter(result_one_team="").order_by("date")[0:5],
+        'listMatchesBack': Match.objects.exclude(result_one_team="").order_by("-date")[0:5],
+        'matchesLigaNext': Match.objects.filter(tournament="Liga Profesional", result_one_team="").order_by("date")[0:5],
+        'matchesLigaBack': Match.objects.filter(tournament="Liga Profesional").exclude(result_one_team="").order_by("-date")[0:5],
+        'matchesCopaArgentinaNext': Match.objects.filter(tournament="Copa Argentina", result_one_team="").order_by("date")[0:5],
+        'matchesCopaArgentinaBack': Match.objects.filter(tournament="Copa Argentina").exclude(result_one_team="").order_by("-date")[0:5],
     }
     return render(request, 'matches.html', context)
 
