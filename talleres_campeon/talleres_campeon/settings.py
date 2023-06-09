@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-*7&$2w^p2(w4$ts%6d9+fo!pak_w*2x9x=xm3l9*5es1=fx1a)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1',]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','valenn4.pythonanywhere.com']
 
 
 # Application definition
@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'talleres_campeon.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "mydatabase",
+        "NAME": "/home/Valenn4/proyecto-talleres/talleres_campeon/mydatabase",
     }
 }
 
