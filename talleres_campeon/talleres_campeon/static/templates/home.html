@@ -10,236 +10,103 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body appPages>
+  <div class="structure">
     {% include 'header.html' %}
 
     <div class="structure_three">
         <div class="options_news">
-            <ul class="option_new">
-              {% for category in listCategories %}
-                {% if category.name == "Varios" %}
-                <li class="end"><a href="../noticias/{{category}}">{{category}}</a></li>
-                {% else %}
-                <li><a href="../noticias/{{category}}">{{category}}</a></li>
-                {% endif %}
-              {% endfor %}
-            </ul>
+          <ul class="option_new">
+            {% for category in listCategories %}
+              {% if category.name == "Varios" %}
+              <li class="end"><a href="../noticias/{{category}}">{{category}}</a></li>
+              {% else %}
+              <li><a href="../noticias/{{category}}">{{category}}</a></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
         </div>
+      <div class="separate">
         <!-- NEWS -->
-      <div class="news">
-        <div class="principally_new first" id="{{listNews.0.id}}">
-            
-          <img src="{{listNews.0.image}}" alt="">
-          <div class="text_new">
-            <p class="category_new">{{listNews.0.category}}</p>
-            <p class="title">{{listNews.0.title}}</p>
-          </div>
-        </div>
-        <div class="principally_new second" id="{{listNews.1.id}}">
-            <img src="{{listNews.1.image}}" alt="">
+        <div class="news">
+          <div class="principally_new first" id="{{listNews.0.id}}">
+              
+            <img src="{{listNews.0.image}}" alt="">
             <div class="text_new">
-              <p class="category_new">{{listNews.1.category}}</p>
-              <p class="title">{{listNews.1.title}}</p>
+              <p class="category_new">{{listNews.0.category}}</p>
+              <p class="title">{{listNews.0.title}}</p>
             </div>
+          </div>
+          <div class="principally_new second" id="{{listNews.1.id}}">
+              <img src="{{listNews.1.image}}" alt="">
+              <div class="text_new">
+                <p class="category_new">{{listNews.1.category}}</p>
+                <p class="title">{{listNews.1.title}}</p>
+              </div>
+          </div>
+          <div class="principally_new three" id="{{listNews.2.id}}">
+              <img src="{{listNews.2.image}}" alt="">
+              <div class="text_new">
+                <p class="category_new">{{listNews.2.category}}</p>
+                <p class="title">{{listNews.2.title}}</p>
+              </div>
+          </div>
         </div>
-        <div class="principally_new three" id="{{listNews.2.id}}">
-            <img src="{{listNews.2.image}}" alt="">
-            <div class="text_new">
-              <p class="category_new">{{listNews.2.category}}</p>
-              <p class="title">{{listNews.2.title}}</p>
-            </div>
-        </div>
-      </div>
 
-      <div class="matches">
-        {% for match in listMatchs %}
-        {% if match.result_one_team == "" %}
-        <div class="match">
-          <p class="tournament">{{match.tournament}}</p>
-          <div class="structure_match">
-            <img src="{{match.one_team}}" alt="">
-            {% if match.date|date:"d/m/Y" == '14/11/2099' %}
-            <div class="info">
-              <p>AC</p>
-            </div>            
-            {% else %}
-            <div class="info">
-              <p>{{match.date|date:"d/m" }}</p>
-              <p>{{match.time|time:"G:i"}}</p>
-            </div>
-            {% endif %}
-            <img src="{{match.two_team}}" alt="">
-          </div>
-        </div>
-        {% endif %}
-        {% endfor %}
-      </div>
-      <!-- MORE NEWS -->
-      <div class="more_news category news_more">
-        <div class="category_structure">
-          {% for new in listNewsFourAndSix %}
-          <div class="new" id="{{new.id}}">
-            <img src="{{new.image}}">
-            <div class="info_new">
-              <p class="category_new">{{new.category}}</p>
-              <p class="title">{{new.title}}</p>
+        <div class="matches">
+          {% for match in listMatchs %}
+          {% if match.result_one_team == "" %}
+          <div class="match">
+            <p class="tournament">{{match.tournament}}</p>
+            <div class="structure_match">
+              <img src="{{match.one_team}}" alt="">
+              {% if match.date|date:"d/m/Y" == '14/11/2099' %}
+              <div class="info">
+                <p>AC</p>
+              </div>            
+              {% else %}
+              <div class="info">
+                <p>{{match.date|date:"d/m" }}</p>
+                <p>{{match.time|time:"G:i"}}</p>
+              </div>
+              {% endif %}
+              <img src="{{match.two_team}}" alt="">
             </div>
           </div>
-          {% endfor %}
-      </div>
-      </div>
-      <!-- VIDEOS -->
-      <div class="more_news category">
-        <div class="text_structure">
-          <h1 class="title_structure">Videos</h1>
-          <!--<div class="more">
-            <p>ver más</p>
-          </div>-->
-        </div>
-        <div class="category_structure">
-          {% for video in listVideos %}
-          <div class="video">
-            <iframe src="{{video.url}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
+          {% endif %}
           {% endfor %}
         </div>
-      </div>
-      <!-- LIGA PROFESIONAL NEWS -->
-      <div class="more_news category">
-      <div class="text_structure">
-        <h1 class="title_structure">Liga Profesional</h1>
-        <div class="more">
-          <p><a href="../noticias/Liga Profesional">ver más</a></p>
-        </div>
-      </div>
-      <div class="category_structure">
-        {% for new in listNewsLigaProfesional %}
-        <div class="new" id="{{new.id}}">
-          <img src="{{new.image}}">
-          <div class="info_new">
-            <p class="category_new">{{new.category}}</p>
-            <p class="title">{{new.title}}</p>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-      </div>
-      <!-- FEMENINO NEWS -->
-      <div class="more_news category">
-      <div class="text_structure">
-        <h1 class="title_structure">Femenino</h1>
-        <div class="more">
-          <p><a href="../noticias/Femenino">ver más</a></p>
-
-        </div>
-      </div>
-      <div class="category_structure">
-        {% for new in listNewsFemenino %}
-        <div class="new" id="{{new.id}}">
-          <img src="{{new.image}}">
-          <div class="info_new">
-            <p class="category_new">{{new.category}}</p>
-            <p class="title">{{new.title}}</p>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-      </div>
-      <!-- MERCADO DE PASES NEWS -->
-      <div class="more_news category">
-        <div class="text_structure">
-          <h1 class="title_structure">Mercado de pases</h1>
-          <div class="more">
-            <p><a href="../noticias/Mercado de pases">ver más</a></p>
-          </div>
-        </div>
-        <div class="category_structure">
-          {% for new in listNewsMercado %}
-          <div class="new" id="{{new.id}}">
-            <img src="{{new.image}}">
-            <div class="info_new">
-              <p class="category_new">{{new.category}}</p>
-              <p class="title">{{new.title}}</p>
+        <!-- MORE NEWS -->
+        <div class="more_news category news_more">
+          <div class="category_structure">
+            {% for new in listNewsFourAndSix %}
+            <div class="new" id="{{new.id}}">
+              <img src="{{new.image}}">
+              <div class="info_new">
+                <p class="category_new">{{new.category}}</p>
+                <p class="title">{{new.title}}</p>
+              </div>
             </div>
-          </div>
-          {% endfor %}
+            {% endfor %}
         </div>
-      </div>
-    </div>
-
-    <div class="structure_two">
-      <div class="options_news">
-        <ul class="option_new">
-          {% for category in listCategories %}
-            <li><a href="../noticias/{{category}}">{{category}}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-      <!-- NEWS -->
-    <div class="news">
-      <div class="principally_new first">
-        <img src="{{listNews.0.image}}" alt="">
-          <div class="text_new">
-            <p class="category_new">{{listNews.0.category}}</p>
-            <p class="title">{{listNews.0.title}}</p>
-          </div>
-      </div>
-    </div>
-  
-    <div class="matches">
-      <div class="match" *ngFor="let match of listMatches">
-        <p class="tournament">{{match.tournament}}</p>
-        <div class="structure_match">
-          <img [src]="match.images_teams[0]" alt="">
-          <div class="info">
-            <p>{{match.date}}</p>
-            <p>{{match.hour}}</p>
-          </div>
-          <img [src]="match.images_teams[1]" alt="">
         </div>
-      </div>
-    </div>
-      <!-- MORE NEWS -->
-      <div class="more_news category news_more">
-        <div class="category_structure">
-          {% for new in listNews|slice:"1:2" %}
-          <div class="new" id="{{new.id}}">
-            <img src="{{new.image}}" alt="">
-            <div class="info_new">
-              <p class="category_new">{{new.category}}</p>
-              <p class="title">{{new.title}}</p>
+        <!-- VIDEOS -->
+        <div class="more_news category">
+          <div class="text_structure">
+            <h1 class="title_structure">Videos</h1>
+            <!--<div class="more">
+              <p>ver más</p>
+            </div>-->
+          </div>
+          <div class="category_structure">
+            {% for video in listVideos %}
+            <div class="video">
+              <iframe src="{{video.url}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
+            {% endfor %}
           </div>
-          {% endfor %}
-          {% for new in listNewsFourAndSix|slice:"0:3"%}
-          <div class="new" id="{{new.id}}">
-            <img src="{{new.image}}" alt="">
-            <div class="info_new">
-              <p class="category_new">{{new.category}}</p>
-              <p class="title">{{new.title}}</p>
-            </div>
-          </div>
-          {% endfor %}
         </div>
-      </div>
-  
-      <!-- VIDEOS -->
-      <div class="more_news category">
-        <div class="text_structure">
-          <h1 class="title_structure">Videos</h1>
-          <!--<div class="more">
-            <p>ver más</p>
-          </div>-->
-        </div>
-        <div class="category_structure">
-          {% for video in listVideos|slice:"0:2" %}
-          <div class="video">
-            <iframe src="{{video.url}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-      <!-- LIGA PROFESIONAL NEWS -->
-      <div class="more_news category">
+        <!-- LIGA PROFESIONAL NEWS -->
+        <div class="more_news category">
         <div class="text_structure">
           <h1 class="title_structure">Liga Profesional</h1>
           <div class="more">
@@ -247,7 +114,7 @@
           </div>
         </div>
         <div class="category_structure">
-          {% for new in listNewsLigaProfesional|slice:"0:3" %}
+          {% for new in listNewsLigaProfesional %}
           <div class="new" id="{{new.id}}">
             <img src="{{new.image}}">
             <div class="info_new">
@@ -264,10 +131,11 @@
           <h1 class="title_structure">Femenino</h1>
           <div class="more">
             <p><a href="../noticias/Femenino">ver más</a></p>
+
           </div>
         </div>
         <div class="category_structure">
-          {% for new in listNewsFemenino|slice:"0:3" %}
+          {% for new in listNewsFemenino %}
           <div class="new" id="{{new.id}}">
             <img src="{{new.image}}">
             <div class="info_new">
@@ -287,7 +155,7 @@
             </div>
           </div>
           <div class="category_structure">
-            {% for new in listNewsMercado|slice:"0:3" %}
+            {% for new in listNewsMercado %}
             <div class="new" id="{{new.id}}">
               <img src="{{new.image}}">
               <div class="info_new">
@@ -298,7 +166,147 @@
             {% endfor %}
           </div>
         </div>
+      </div>
+      
     </div>
+
+    <div class="structure_two">
+      <div class="options_news">
+        <ul class="option_new">
+          {% for category in listCategories %}
+            <li><a href="../noticias/{{category}}">{{category}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="separate">
+        <!-- NEWS -->
+      <div class="news">
+        <div class="principally_new first">
+          <img src="{{listNews.0.image}}" alt="">
+            <div class="text_new">
+              <p class="category_new">{{listNews.0.category}}</p>
+              <p class="title">{{listNews.0.title}}</p>
+            </div>
+        </div>
+      </div>
+    
+      <div class="matches">
+        <div class="match" *ngFor="let match of listMatches">
+          <p class="tournament">{{match.tournament}}</p>
+          <div class="structure_match">
+            <img [src]="match.images_teams[0]" alt="">
+            <div class="info">
+              <p>{{match.date}}</p>
+              <p>{{match.hour}}</p>
+            </div>
+            <img [src]="match.images_teams[1]" alt="">
+          </div>
+        </div>
+      </div>
+        <!-- MORE NEWS -->
+        <div class="more_news category news_more">
+          <div class="category_structure">
+            {% for new in listNews|slice:"1:2" %}
+            <div class="new" id="{{new.id}}">
+              <img src="{{new.image}}" alt="">
+              <div class="info_new">
+                <p class="category_new">{{new.category}}</p>
+                <p class="title">{{new.title}}</p>
+              </div>
+            </div>
+            {% endfor %}
+            {% for new in listNewsFourAndSix|slice:"0:3"%}
+            <div class="new" id="{{new.id}}">
+              <img src="{{new.image}}" alt="">
+              <div class="info_new">
+                <p class="category_new">{{new.category}}</p>
+                <p class="title">{{new.title}}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+    
+        <!-- VIDEOS -->
+        <div class="more_news category">
+          <div class="text_structure">
+            <h1 class="title_structure">Videos</h1>
+            <!--<div class="more">
+              <p>ver más</p>
+            </div>-->
+          </div>
+          <div class="category_structure">
+            {% for video in listVideos|slice:"0:2" %}
+            <div class="video">
+              <iframe src="{{video.url}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <!-- LIGA PROFESIONAL NEWS -->
+        <div class="more_news category">
+          <div class="text_structure">
+            <h1 class="title_structure">Liga Profesional</h1>
+            <div class="more">
+              <p><a href="../noticias/Liga Profesional">ver más</a></p>
+            </div>
+          </div>
+          <div class="category_structure">
+            {% for new in listNewsLigaProfesional|slice:"0:3" %}
+            <div class="new" id="{{new.id}}">
+              <img src="{{new.image}}">
+              <div class="info_new">
+                <p class="category_new">{{new.category}}</p>
+                <p class="title">{{new.title}}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          </div>
+          <!-- FEMENINO NEWS -->
+          <div class="more_news category">
+          <div class="text_structure">
+            <h1 class="title_structure">Femenino</h1>
+            <div class="more">
+              <p><a href="../noticias/Femenino">ver más</a></p>
+            </div>
+          </div>
+          <div class="category_structure">
+            {% for new in listNewsFemenino|slice:"0:3" %}
+            <div class="new" id="{{new.id}}">
+              <img src="{{new.image}}">
+              <div class="info_new">
+                <p class="category_new">{{new.category}}</p>
+                <p class="title">{{new.title}}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          </div>
+          <!-- MERCADO DE PASES NEWS -->
+          <div class="more_news category">
+            <div class="text_structure">
+              <h1 class="title_structure">Mercado de pases</h1>
+              <div class="more">
+                <p><a href="../noticias/Mercado de pases">ver más</a></p>
+              </div>
+            </div>
+            <div class="category_structure">
+              {% for new in listNewsMercado|slice:"0:3" %}
+              <div class="new" id="{{new.id}}">
+                <img src="{{new.image}}">
+                <div class="info_new">
+                  <p class="category_new">{{new.category}}</p>
+                  <p class="title">{{new.title}}</p>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+    
 </body>
 </html>
 
