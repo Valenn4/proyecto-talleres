@@ -1,5 +1,5 @@
 body {
-  padding-bottom: 70px;
+  /*padding-bottom: 70px;*/
 }
 .structure_two{
     display: none;
@@ -60,7 +60,6 @@ body {
   .news img {
     width: 100%;
     height: 100%;
-    opacity: .75;
   }
   .principally_new .text_new {
     position: absolute;
@@ -337,24 +336,38 @@ body {
       height: 380px;
     }
   }
-  
-  
-  
-  
-  @media screen and (min-width:50em){
+  @media screen and (min-width:52em){
+    .options_news {
+      width: 100%;
+    }
+    .option_new li {
+      margin: 5px 40px;
+    }
+    .option_new .end {
+      padding-right:55px;
+    }
+    .separate {
+      margin: 10px;
+    }
     .structure_two{
+      width: 90%;
       display: block;
+      margin-left: 10%;
     }
     .structure_three{
       display: none;
     }
     .news {
       display: grid;
-      grid-template-columns: repeat(1, 1fr);
       width: 100%;
       height: auto;
+      margin-bottom: 20px;
+    }
+    .news img {
+      width: 100%;
     }
     .principally_new {
+      width: 100%;
       height: auto;
     }
     .first .title {
@@ -362,13 +375,13 @@ body {
     }
     .first .text_new {
       bottom:20%;
-      left: 30px;
+      left: 20px;
     }
     .text_new .category_new{
       font-size: 15px;
     }
     .first .title {
-      font-size: 24px;
+      font-size: 23px;
     }
     .info p{
       font-size: 18px;
@@ -378,18 +391,9 @@ body {
     .matches{
       display: none;
     }
-    /*
-    .matches{
-      width: 95%;
-      margin-top: 20px;
-    }
-    .match {
-      margin: 25px 30px;
-    }*/
-  
     /* MORE NEWS */
     .more_news {
-      width:95%;
+      width:100%;
     }
     .news_more{
       width: 100%;
@@ -404,10 +408,10 @@ body {
     }
     .news_more .category_structure{
       grid-gap: 0px;
-      padding: 0px 0px;
+      padding: 10px;
     }
     .news_more .category_structure .new{
-      margin: 20px;
+      margin: 10px 10px;
     }
     .news_more .category_structure img{
       margin: 0px;
@@ -453,22 +457,42 @@ body {
     }
   
   }
-  @media screen and (min-width:55em){
-  
-  
-  }
-  @media screen and (min-width: 60em){
+  @media screen and (min-width:60em){
     .structure_two{
       display: none;
     }
     .structure_three{
       display: block;
+      width: 92%;
+      margin-left: 8%;
     }
-    .option_new li {
-      margin: 5px 40px;
+    .news {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      height: auto;
     }
-    .option_new .end {
-      padding-right:55px;
+    .first {
+      grid-column: 1/3;
+      margin-bottom: 20px;
+    }
+    .second {
+      grid-column: 1/2;
+      height: 300px;
+    }
+    .three {
+      grid-column: 2/3;
+      height: 300px;
+    }
+    .first .text_new{
+      bottom: 15%;
+      left: 30px;
+    }
+  }
+  @media screen and (min-width: 68em){
+    
+    .separate {
+      margin: 10px;
     }
     .news {
       display: grid;
@@ -476,23 +500,25 @@ body {
       grid-template-rows: repeat(2, 1fr);
       width: 100%;
       height: auto;
+
     }
     .principally_new {
-      height: 270px;
+      height: 255px;
+      margin-bottom: 0px;
     }
     .first {
-      height: 540px;
+      height: 510px;
     }
     .first img {
-      height: 540px;
+      height: 510px;
     }
     .first .title {
       position: absolute;
       font-size: 23px;
     }
     .first .text_new {
-      bottom:20%;
-      left: 30px;
+      bottom:24%;
+      left: 20px;
     }
     .text_new .category_new{
       font-size: 14px;
@@ -513,14 +539,14 @@ body {
       grid-row: 2/3;
     }
     .category{
-      width: 95%;
+      width: 100%;
     }
     .news_more .category_structure{
       grid-gap: 10px;
       padding: 30px;
     }
     .more_news {
-      width:95%;
+      width:100%;
     }
     .news_more{
       width: 100%;
@@ -594,11 +620,14 @@ body {
         .first .title {
         font-size: 26px;
         }
+        .first .text_new{
+          bottom:17%;
+        }
         .second .title, .three .title{
         font-size: 21px;
         }
         .second .text_new, .three .text_new{
-        bottom: 30px;
+        bottom:20px;
         }
         .info_new .title {
         font-size: 20px;

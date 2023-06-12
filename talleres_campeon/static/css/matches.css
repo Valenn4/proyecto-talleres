@@ -1,0 +1,212 @@
+.filter {
+    display: flex;
+    width: 100%;
+    margin: 15px 0 0px 0;
+}
+.filter select {
+    display: flex;
+    width: 75%;
+    padding: 15px;
+    margin: auto;
+    border: none;
+    background-color: rgb(204, 204, 204);
+}
+.tournament{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 90px;
+}
+.liga_profesional{
+    display: none;
+}
+.copa_argentina {
+    display: none;
+}
+.texts{
+    display: flex;
+    width: 90%;
+    margin: 20px auto 5px auto;
+    border-bottom: 1px solid black;
+}
+.title{
+    color: rgb(5, 5, 34);
+    font-family: 'Poppins';
+    font-size: 19px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.complete_list {
+    display: flex;
+    margin-left: 10px;
+    cursor: pointer;
+    align-items: center;
+    font-family: 'Poppins';
+    font-size: 14px;
+    color: rgb(5, 5, 34);
+}
+.mobile {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 90%;
+}
+
+.match {
+    display: flex;
+    flex-direction: column;
+    width: 99%;
+    margin: 10px auto;
+    font-family: 'Roboto';
+    font-weight: bold;
+    color: rgb(5, 5, 34);
+}
+
+.mobile::-webkit-scrollbar {
+    display: none;
+}
+.info {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+.date {
+    display: flex;
+    width: 30%;
+    flex-direction: column-reverse;
+    text-align: right;
+}
+.instance {
+    display: flex;
+    width: 70%;
+    font-weight: bold;
+    align-items: center;
+}
+.teams {
+    display: flex;
+    width: 100%;
+    background-color: rgb(197, 197, 197);
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 5px;
+    padding: 3% 0%;
+    margin: auto;
+}
+.teams img {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+}
+.team_1 p, .team_2 p{
+    width: auto;
+}
+.team_1, .team_2{
+    display: flex;
+    margin: auto;
+    width: auto;
+}
+.team_1{
+    padding-right: 2%;
+    justify-content: center;
+    border-right: 1px solid gray;
+}
+.team_2{
+    padding-left: 2%;
+    justify-content: center;
+    border-left: 1px solid gray;
+}
+
+.teams p {
+    font-size: 17px;
+}
+.teams .time {
+    font-size: 16px;
+    margin: 0 5px;
+    text-align: center;
+}
+.result{
+    width: 60px;
+}
+
+.no_matches{
+    font-family: 'Poppins';
+    font-size: 17px;
+    color: rgb(5, 5, 34);
+}
+
+@media screen and (min-width:832px){
+    .separate {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        margin-left: 10%;
+        align-items: center;
+        justify-content: center;
+    }
+    .tournament {
+        margin: auto;
+        padding-bottom: 30px;
+    }
+}
+@media screen and (min-width: 60em){
+    .separate {
+        height: 100vh;
+        margin-left: 8%;
+    }
+    .filter {
+        width: 90%;
+        height: auto;
+        margin: 0px auto 20px auto;
+        padding-top: 0px;
+    }
+    .filter select {
+        width: 40%;
+        margin: 0;
+    }
+    .mobile {
+        display: flex;
+        flex-direction: row;
+        overflow: auto;
+        height: auto;
+    }
+    .tournament{
+        padding-bottom: 20px;
+        margin: 0px;
+
+    }
+    .texts{
+        width: 90%;
+    }
+    .match {
+        width: auto;
+        margin-right: 30px;
+        margin-top: 15px;
+        margin-left: 0px;
+    }
+    .info{
+        width: 100%;
+    }
+    .date {
+        width: 20%;
+    }
+    .instance {
+        width: 80%;
+    }
+    .result{
+        width: 50px;
+    }
+    .team_1, .team_2 {
+        padding: 0;
+        margin: 0;
+    }
+    .team_1 p, .team_2 p{
+        width: 110px;
+        
+    }
+    .team_2{
+        text-align: right;
+    }
+}

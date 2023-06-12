@@ -1,0 +1,261 @@
+.structure{
+  padding-bottom: 70px;
+}
+.new {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 90%;
+    font-family: 'Poppins';
+  }
+  .new .category {
+    position: absolute;
+    color: white;
+    background-color: orangered;
+    padding: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .new .title {
+    font-size: 25px;
+    margin: 5px 0px;
+    margin-top: 45px;
+    color: rgb(5, 5, 34);
+  }
+  .new .sub_title{
+    font-size: 17px;
+  }
+  .new .description{
+    width: 100%;
+    font-weight: 500;
+    font-size: 17px;
+    margin-top: 15px;
+  }
+  
+  .new .date {
+    margin-top: 10px;
+    padding: 20px 0;
+    border-top: 1px solid rgb(0, 0, 0, .2);
+    border-bottom: 1px solid rgb(0, 0, 0, .2);
+  }
+  
+  .new img {
+    width: 100%;
+    height: 250px;
+    margin: 15px 0;
+  }
+  
+  .more_news{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    margin: 30px auto;
+    margin-top: 50px;
+  }
+  .more_news h1 {
+    color: rgb(5, 5, 34);
+    font-family: 'Poppins';
+    font-size: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid orangered;
+  }
+  .new_more {
+    width: 100%;
+    margin: 10px auto;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+  .new_more img{
+    width: 100%;
+    height: 250px;
+  }
+  
+  .info_new {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-family: 'Poppins';
+    font-weight: 600;
+    color: white;
+  }
+  .info_new .category_new {
+    position: absolute;
+    bottom: 100%;
+    text-align: center;
+    padding: 5px 8px;
+    background-color: orangered;
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+  .info_new .title {
+    background-color:  rgb(5, 5, 34);
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  @media screen and (min-width:480px){
+    .new_more img {
+      height: 290px;
+    }
+  }
+  @media screen and (min-width:530px){
+    .new img {
+      height: 300px;
+    }
+    .new_more img {
+      height: 320px;
+    }
+    .more_news .title {
+      font-size: 19px;
+    }
+    .more_news{
+      width: 80%;
+      margin: 0px;
+      margin-left: 30px;
+    }
+  }
+  
+  @media screen and (min-width:630px){
+    .new {
+      margin: 30px 30px;
+      width: 90%;
+    }
+    .new img {
+      height: 370px;
+    }
+    .new_more img {
+      height: 340px;
+    }
+  }
+  @media screen and (min-width:710px){
+    .structure{
+      padding-bottom: 100px;
+    }
+    .new img {
+      height: 400px;
+    }
+    
+    .new_more img {
+      height: 350px;
+    }
+    .more_news{
+      width: 75%;
+      margin: 0px;
+      margin-left: 30px;
+    }
+  }
+  
+  
+  @media screen and (min-width:52em){
+    .structure {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      margin-left: 10%;
+      padding-bottom: 0px;
+    }
+    .new {
+      margin: 30px 0px 0px 60px;
+      width: 80%;
+    }
+    .new img {
+      height: 345px;
+    }
+    .new .title{
+      font-size: 26px;
+    }
+    .new .sub_title{
+      font-size: 19px;
+    }
+    .new .description{
+      font-size: 19px;
+    }
+    .new .other_description{
+      font-size: 19px;
+    }
+    .more_news {
+      width: 92%;
+      margin: 40px 0px;
+      margin-left: 8%;
+    }
+    .more_news h1 {
+      width: 65%;
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+    .new_more {
+      width: 65%;
+      margin: 0px;
+      margin-bottom: 20px;
+    }
+    .new_more img {
+      height: 300px;
+    }
+    .more_news .title {
+      font-size: 18px;
+    }
+
+  }
+  @media screen and (min-width:60em){
+    .structure{
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 30px;
+    }
+    .new {
+      margin: 30px 0px 0px 0px;
+      width: 100%;
+    }
+    .new .title {
+      font-size: 30px;
+    }
+    .new .description {
+      font-size: 19px;
+    }
+    .new .other_description {
+      font-size: 19px;
+    }
+    .new img {
+      height: 420px;
+    }
+  
+    .more_news {
+      width: 55%;
+      margin: 40px 20px 40px 20px;
+      margin-top: 170px;
+    }
+    .new_more {
+      width: 100%;
+    }
+    .new_more img {
+      height: 260px;
+    }
+    .more_news .title {
+      font-size: 18px;
+    }
+  }
+  @media screen and (min-width:70em){
+    .structure{
+      display: flex;
+    }
+    .new {
+      margin: 40px 30px;
+      width: 65%;
+    }
+    .new img{
+      height: 420px;
+    }
+    .more_news{
+      width: 35%;
+      margin:40px;
+      margin-top: 230px;
+    }
+    .new_more img {
+      height: 300px;
+    }
+  }
+  
