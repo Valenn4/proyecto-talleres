@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="{% static 'css/newDetailll.css' %}">
+    <link rel="stylesheet" href="{% static 'css/newDetaillll.css' %}">
 </head>
 <body>
     {% include 'header.html' %}
@@ -24,15 +24,17 @@
         </div>
         <div class="more_news">
           <h1>Otras noticias</h1>
-          {% for new in listNewsCategory|slice:"0:2" %}
-          <div class="new_more" id="{{new.id}}">
-              <img src="{{new.image}}" alt="">
-              <div class="info_new">
-                <p class="category_new">{{new.category}}</p>
-                <p class="title">{{new.title}}</p>
-              </div>
+          <div class="news_more">
+            {% for new in listNewsCategory|slice:"0:2" %}
+            <div class="new_more" id="{{new.id}}">
+                <img src="{{new.image}}" alt="">
+                <div class="info_new">
+                  <p class="category_new">{{new.category}}</p>
+                  <p class="title">{{new.title}}</p>
+                </div>
+            </div>
+            {% endfor %}
           </div>
-          {% endfor %}
         </div>
       </div>      
 </body>

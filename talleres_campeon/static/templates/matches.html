@@ -6,12 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/matches.css' %}">
+    <link rel="stylesheet" href="{% static 'css/matchessss.css' %}">
 </head>
 <body>
     {% include 'header.html' %}
 
     <div class="separate">
+        <div class="next_match">
+            {% for match in listMatchesNext|slice:1 %}
+                    <div class="match">
+                        <div class="teams">
+                            <div class="team_1">
+                                <img src="{{match.one_team}}" alt="">
+                                <p>{{match.name_one_team}}</p>
+                            </div>
+                            <p class="time"></p>
+                            <div class="team_2">
+                                <p>{{match.name_two_team}}</p>
+                                <img src="{{match.two_team}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
         <div class="filter">
             <select class="tournaments">
                 <option><p>Todas las competiciones</p></option>
@@ -242,4 +259,4 @@
     
 </body>
 </html>
-<script src="{% static 'js/matches.js' %}"></script>
+<script src="{% static 'js/matchess.js' %}"></script>
