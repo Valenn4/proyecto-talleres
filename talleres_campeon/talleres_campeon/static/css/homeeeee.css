@@ -95,13 +95,16 @@ body {
     margin: auto;
     align-items: center;
     width: auto;
-    color: rgb(5, 5, 34);
+    color: white;
     background-color: rgb(5, 5, 34);
   }
   .matches::-webkit-scrollbar {
     display: none;
   }
-  
+  .structure_match {
+    display: flex;
+    flex-direction: column;
+  }
   .match{
     display: flex;
     flex-direction: column;
@@ -111,7 +114,6 @@ body {
     padding: 0 15px;
     align-items: center;
     justify-content: center;
-    background-color: whitesmoke;
     border-radius: 6px;
   }
   .tournament{
@@ -123,12 +125,12 @@ body {
     margin-bottom: 10px;
   }
   
-  .structure_match {
-    display: flex;
-  }
   .match img{
     width: 35px;
     height: 35px;
+  }
+  .info{
+    display: flex;
   }
   .info p{
     font-family: 'Poppins';
@@ -458,6 +460,13 @@ body {
   
   }
   @media screen and (min-width:60em){
+    .structure_two{
+      display: block;
+      width: 92%;
+      margin-left: 8%;
+    }
+  }
+  @media screen and (min-width:68em){
     .structure_two{
       display: none;
     }

@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    #'csp.middleware.CSPMiddleware',
+    'csp.middleware.CSPMiddleware',
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -145,11 +145,12 @@ LOGOUT_REDIRECT_URL = '../login/'
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
-CSP_DEFAULT_SRC = ("'self'",)
-CSP_STYLE_SRC = ("'self'",)
-CSP_SCRIPT_SRC = ("'self'",)
-CSP_IMG_SRC = ('https://pbs.twimg.com/',)
+CSP_DEFAULT_SRC = ("'none'",)
+CSP_STYLE_SRC = ("'self'", 'fonts.googleapis.com',)
+CSP_SCRIPT_SRC = ("'self'", )
 CSP_FONT_SRC = ("'self'",)
+CSP_IMG_SRC = ("'self'", 'https://pbs.twimg.com/','https://www.promiedos.com.ar/', 'https://upload.wikimedia.org/')
+CSP_FRAME_SRC = ('https://www.youtube.com/embed/')
 
 SECURE_HSTS_SECONDS = 0
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
