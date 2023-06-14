@@ -1,3 +1,26 @@
+.next_match{
+    width: auto;
+}
+.next_match .match {
+    margin: 0px;
+    width: auto;
+}
+.next_match .teams {
+    border-radius: 0px;
+    background-color: darkred;
+    border: 0px;
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 400;
+    justify-content: center;
+}
+.next_match .team_1, .next_match .team_2{
+    margin: 0px;
+    border: none;
+}
+.next_match .time {
+    border-bottom: 1px solid white;    
+}
 .filter {
     display: flex;
     width: 100%;
@@ -136,7 +159,16 @@
     color: rgb(5, 5, 34);
 }
 
+@media screen and (min-width:650px){
+    .next_match .teams {
+        width: 96%;
+        padding: 2%;
+    }
+}
 @media screen and (min-width:832px){
+    .next_match {
+        width: 100%;
+    }
     .separate {
         height: auto;
         display: flex;
@@ -152,14 +184,28 @@
     }
 }
 @media screen and (min-width: 60em){
+    .next_match .teams {
+        width: 97%;
+        padding: 1.5%;
+    }
+    .next_match .team_1 p{
+        width: auto;
+        margin-right: 10px;
+    }
+    .next_match .team_2 p{
+        width: auto;
+        margin-left: 10px;
+    }
+    .next_match .time {
+        margin: 0 10px;
+    }
     .separate {
-        height: 100vh;
         margin-left: 8%;
     }
     .filter {
         width: 90%;
         height: auto;
-        margin: 0px auto 20px auto;
+        margin: 30px auto 20px auto;
         padding-top: 0px;
     }
     .filter select {
@@ -175,7 +221,6 @@
     .tournament{
         padding-bottom: 20px;
         margin: 0px;
-
     }
     .texts{
         width: 90%;
@@ -208,5 +253,11 @@
     }
     .team_2{
         text-align: right;
+    }
+}
+@media screen and (min-width:70em){
+    .next_match .teams {
+        width: 98%;
+        padding: 1%;
     }
 }

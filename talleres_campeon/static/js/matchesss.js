@@ -16,7 +16,6 @@ tournament.addEventListener("change", () => {
     }
 })
 
-
 setInterval(() => {
     var fechaInicio = new Date().getTime();
     var fechaFin    = new Date('2023-06-24 20:00:00').getTime();
