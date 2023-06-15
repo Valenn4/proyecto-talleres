@@ -12,8 +12,8 @@ class Category(models.Model):
 class New(models.Model):
     title = models.CharField(max_length=100, blank=False)
     sub_title = models.TextField(max_length=200, blank=False)
-    description = models.TextField(max_length=200, blank=False)
-    other_description = models.TextField(max_length=200, blank=False)
+    description = models.TextField(max_length=None, blank=False)
+    other_description = models.TextField(max_length=None, blank=False)
     image = models.TextField(max_length=200, blank=False)
     date = models.DateTimeField(blank=False, default=datetime.datetime.now)
     category = models.ForeignKey(Category, blank=False, on_delete=models.CASCADE)
