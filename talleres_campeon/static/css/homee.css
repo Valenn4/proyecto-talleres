@@ -1,5 +1,5 @@
 body {
-  /*padding-bottom: 70px;*/
+  padding-bottom: 70px;
 }
 .structure_two{
     display: none;
@@ -95,13 +95,16 @@ body {
     margin: auto;
     align-items: center;
     width: auto;
-    color: rgb(5, 5, 34);
+    color: white;
     background-color: rgb(5, 5, 34);
   }
   .matches::-webkit-scrollbar {
     display: none;
   }
-  
+  .structure_match {
+    display: flex;
+    flex-direction: row;
+  }
   .match{
     display: flex;
     flex-direction: column;
@@ -111,8 +114,9 @@ body {
     padding: 0 15px;
     align-items: center;
     justify-content: center;
-    background-color: whitesmoke;
     border-radius: 6px;
+    background-color: white;
+    color: black;
   }
   .tournament{
     width: auto;
@@ -123,12 +127,13 @@ body {
     margin-bottom: 10px;
   }
   
-  .structure_match {
-    display: flex;
-  }
   .match img{
     width: 35px;
     height: 35px;
+  }
+  .info{
+    display: flex;
+    flex-direction: column;
   }
   .info p{
     font-family: 'Poppins';
@@ -295,6 +300,12 @@ body {
     .new img {
       height: 330px;
     }
+    .principally_new .title {
+      font-size: 21px;
+    }
+    .info_new .title{
+      font-size: 19px;
+    }
   }
   @media screen and (min-width:650px){
     .principally_new {
@@ -333,7 +344,7 @@ body {
   }
   @media screen and (min-width:760px){
     .new img {
-      height: 380px;
+      height: 430px;
     }
   }
   @media screen and (min-width:52em){
@@ -458,6 +469,13 @@ body {
   
   }
   @media screen and (min-width:60em){
+    .structure_two{
+      display: block;
+      width: 92%;
+      margin-left: 8%;
+    }
+  }
+  @media screen and (min-width:68em){
     .structure_two{
       display: none;
     }

@@ -1,3 +1,27 @@
+.next_match{
+    width: auto;
+}
+.next_match .match {
+    margin: 0px;
+    width: auto;
+}
+.next_match .teams {
+    border-radius: 0px;
+    background-color: orangered;
+    border: 0px;
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 500;
+    justify-content: center;
+}
+.next_match .team_1, .next_match .team_2{
+    margin: 0px;
+    border: none;
+}
+.next_match .time {
+    text-transform: uppercase;
+    border-bottom: 1px solid white;    
+}
 .filter {
     display: flex;
     width: 100%;
@@ -136,11 +160,54 @@
     color: rgb(5, 5, 34);
 }
 
+@media screen and (min-width:650px){
+    .next_match .teams {
+        width: 96%;
+        padding: 2%;
+    }
+}
+@media screen and (min-width:832px){
+    .next_match {
+        width: 100%;
+    }
+    .separate {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        margin-left: 10%;
+        align-items: center;
+        justify-content: center;
+    }
+    .tournament {
+        margin: auto;
+        padding-bottom: 30px;
+    }
+}
 @media screen and (min-width: 60em){
+    .next_match .teams {
+        width: 97%;
+        padding: 1.5%;
+    }
+    .next_match .team_1 p{
+        width: auto;
+        margin-right: 10px;
+    }
+    .next_match .team_2 p{
+        width: auto;
+        margin-left: 10px;
+    }
+    .next_match .time {
+        margin: 0 10px;
+    }
+    .separate {
+        margin-left: 8%;
+    }
     .filter {
         width: 90%;
-        margin: 20px auto 5px auto;
-        padding-top: 10px;
+        height: auto;
+        margin: 30px auto 20px auto;
+        padding-top: 0px;
     }
     .filter select {
         width: 40%;
@@ -153,7 +220,8 @@
         height: auto;
     }
     .tournament{
-        padding-bottom: 50px;
+        padding-bottom: 20px;
+        margin: 0px;
     }
     .texts{
         width: 90%;
@@ -186,5 +254,11 @@
     }
     .team_2{
         text-align: right;
+    }
+}
+@media screen and (min-width:70em){
+    .next_match .teams {
+        width: 98%;
+        padding: 1%;
     }
 }

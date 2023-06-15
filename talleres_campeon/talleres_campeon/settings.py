@@ -87,8 +87,8 @@ WSGI_APPLICATION = 'talleres_campeon.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        #"NAME": "/home/Valenn4/proyecto-talleres/talleres_campeon/mydatabase",
-        "NAME": "mydatabase"
+        "NAME": "/home/Valenn4/proyecto-talleres/talleres_campeon/mydatabase",
+        #"NAME": "mydatabase"
     }
 }
 

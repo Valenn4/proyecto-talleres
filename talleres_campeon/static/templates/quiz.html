@@ -1,0 +1,52 @@
+{% load static %}
+<header>
+    <link rel="stylesheet" href="{% static 'css/quizzz.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</header>
+<body>
+    {% include 'header.html' %}
+
+    <div class="structure">
+        <div class="init">
+            <h1>¡Bienvenido al Quiz Matador!</h1>
+
+            <div class="reglas">
+                <p>- El objetivo del juego es que responda de manera correcta la pregunta del dia.</p>
+                <p>- Tendrá 30 segundos para responder.</p>
+                <p>- Solamente cuenta con un intento.</p>
+                <p>- La pregunta se cambia diariamente.</p>
+            </div>
+            <p class="error">Ya has respondido a la pregunta de hoy... ¡Vuelve mañana!</p>
+            <button class="button_play">Jugar</button>
+        </div>
+        <div class="game">
+            <div class="time">
+                <p class="counter">0</p>
+            </div>
+            <div class="question">
+                <p>¿Quién es el máximo goleador de Talleres en la historia?</p>
+            </div>
+            <div class="answers">
+                <p class="answer" id="true">Gonzalo Klusener</p>
+                <p class="answer" id="false">Michael Santos</p>
+                <p class="answer" id="false">Diego Valoyes</p>
+                <p class="answer" id="false">Nahuel Bustos</p>
+            </div>
+
+            <!-- RESULTADOS -->
+            <div class="answer_true">
+                <div class="true_texts">
+                    <p>¡Respuesta correcta!</p>
+                    <button><a href="/">Volver al inicio</a></button>
+                </div>
+            </div>
+            <div class="answer_false">
+                <div class="false_texts">
+                    <p>Respuesta incorrecta... <br>¡Vuelve mañana!</p>
+                    <button><a href="/">Volver al inicio</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="{% static 'js/quizz.js' %}"></script>
