@@ -1,5 +1,5 @@
 body {
-  /*padding-bottom: 70px;*/
+  padding-bottom: 70px;
 }
 .structure_two{
     display: none;
@@ -103,7 +103,7 @@ body {
   }
   .structure_match {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
   .match{
     display: flex;
@@ -115,6 +115,8 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 6px;
+    background-color: gray;
+    color: black;
   }
   .tournament{
     width: auto;
@@ -131,6 +133,7 @@ body {
   }
   .info{
     display: flex;
+    flex-direction: column;
   }
   .info p{
     font-family: 'Poppins';
@@ -297,6 +300,12 @@ body {
     .new img {
       height: 330px;
     }
+    .principally_new .title {
+      font-size: 21px;
+    }
+    .info_new .title{
+      font-size: 19px;
+    }
   }
   @media screen and (min-width:650px){
     .principally_new {
@@ -335,7 +344,7 @@ body {
   }
   @media screen and (min-width:760px){
     .new img {
-      height: 380px;
+      height: 430px;
     }
   }
   @media screen and (min-width:52em){
