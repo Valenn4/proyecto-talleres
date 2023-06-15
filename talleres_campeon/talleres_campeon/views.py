@@ -63,3 +63,6 @@ def positions(request):
         'positionLigaProfesional':PositionLigaProfesional.objects.all().order_by("-puntos")
     }
     return render(request, 'positions.html', context)
+
+def quiz(request):
+    return render(request, 'quiz.html')

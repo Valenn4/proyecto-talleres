@@ -7,11 +7,11 @@
 }
 .next_match .teams {
     border-radius: 0px;
-    background-color: darkred;
+    background-color: orangered;
     border: 0px;
     color: white;
     font-family: 'Roboto';
-    font-weight: 400;
+    font-weight: 500;
     justify-content: center;
 }
 .next_match .team_1, .next_match .team_2{
@@ -19,6 +19,7 @@
     border: none;
 }
 .next_match .time {
+    text-transform: uppercase;
     border-bottom: 1px solid white;    
 }
 .filter {

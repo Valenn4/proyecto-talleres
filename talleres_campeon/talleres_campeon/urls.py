@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from talleres_campeon.views import home, newDetail, newsCategory, matches, positions
+from talleres_campeon.views import home, newDetail, newsCategory, matches, positions, quiz
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,7 +24,8 @@ urlpatterns = [
     path('noticia/<int:id>', newDetail),
     path('noticias/<str:category>', newsCategory),
     path('partidos/', matches),
-    path('posiciones/', positions)
+    path('posiciones/', positions),
+    path('quiz/', quiz)
 ]
 
 urlpatterns += [

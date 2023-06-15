@@ -228,7 +228,7 @@
   }
   @media screen and (min-width: 66em){
     .new img {
-      height: 430px;
+      height: 440px;
     }
   }
   @media screen and (min-width:70em){
@@ -254,7 +254,7 @@
       font-size: 19px;
     }
     .new img {
-      height: 420px;
+      height: 460px;
     }
   
     .more_news {
@@ -278,9 +278,6 @@
     .new {
       margin: 40px 20px;
       width: 70%;
-    }
-    .new img{
-      height: 420px;
     }
     .more_news{
       width: 30%;
