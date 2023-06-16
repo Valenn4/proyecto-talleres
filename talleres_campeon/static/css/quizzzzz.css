@@ -68,7 +68,7 @@ body {
 
 /* GAME */
 .game {
-    width: 100%;
+    width: 370px;
     margin: auto;
     display: none;
     flex-direction: column;
