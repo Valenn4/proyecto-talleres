@@ -27,6 +27,7 @@
     justify-content: center;
     background-color: rgb(5, 5, 34);
     margin: 0;
+    border-top: 2px solid orangered;
   }
   .header img {
     width: 22px;
@@ -89,7 +90,6 @@
       align-items: center;
       padding: 1%;
       background-color: rgb(5, 5, 34);
-      border-bottom: 2px solid orangered;
     }
   
     .header_web img {
