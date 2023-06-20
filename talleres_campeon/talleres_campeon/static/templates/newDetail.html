@@ -20,7 +20,9 @@
           <p class="date">{{new.date|date:"d/m/Y H:i"}}</p>
           <p class="description">{{new.description}}</p>
           <img src="{{new.image}}" alt="">
-          <p class="other_description">{{new.other_description}}</p>
+          {% for el in other_description %}
+          <p class="other_description">{{el}}</p>
+          {% endfor %}
         </div>
         <div class="more_news">
           <h1>Otras noticias</h1>

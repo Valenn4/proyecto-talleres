@@ -34,8 +34,12 @@ def newDetail(request, id):
     for el in listNew:
         if int(el.id) != int(id) and len(listNewsCategory)<2:
             listNewsCategory.append(el)
+
+    new = New.objects.get(id=int(id))
+    mytext = new.other_description.split("/**/") 
     context = {
-        'new': New.objects.get(id=int(id)),
+        'new': new,
+        'other_description': mytext,
         'listNewsCategory': listNewsCategory,
     }
     return render(request, 'newDetail.html', context)
